@@ -1,19 +1,18 @@
 package aliffia.restful.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateContactRequest {
-
-    @JsonIgnore
+public class UpdateContactRequest {
     @NotBlank
     private String id;
 
@@ -24,8 +23,8 @@ public class CreateContactRequest {
     @Size(max=100)
     private String lastName;
 
-    @Size(max=100)
     @Email
+    @Size(max=100)
     private String email;
 
     @Size(max=100)
